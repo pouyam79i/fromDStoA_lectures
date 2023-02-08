@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <!-- HTML config -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- adding css -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- adding title and favicon -->
+    <link rel='shortcut icon' type='image/x-icon' href='./assets/favicon.png' />
+    <title>fromDStoA</title>
+</head>
+
+<body>
+
+    <!-- Header of contents -->
+    <div class="header">
+        <div class="main_text">from Data Structures<br>to Algorithms</div>
+        <button onclick="location.href='#books'">
+            SEE THIS COURSE CONTENTS
+        </button>
+    </div >
+
+    <!-- Course info - contains 4 cols -->
+    <div id="lectures" class="lectures">
+        
+        <!-- first card -- HTTP -->
+        <div class="cards">
+        <img
+            src="./assets/c-logo.png"
+            alt="C"
+            style="
+              width: 60%;
+              opacity: 0.5;
+              margin-top: 25px;
+            "
+          />
+          <h1 style="text-align: center">C</h1>
+          <p>
+            C is a general-purpose computer programming language. It was created in the 1970s by Dennis Ritchie, and remains very widely used and influential. By design, C's features cleanly reflect the capabilities of the targeted CPUs.
+            <br>
+            We use C to create basic data structures or fast algorithms.
+          </p>
+        </div>
+
+        <!-- second card - HTML CSS -->
+        <div class="cards">
+        <img
+            src="./assets/python-logo.png"
+            alt="Python"
+            style="width: 40%; opacity: 0.5"
+          />
+        <h1>Pyhton</h1>
+        <p>
+          Python is a high-level, general-purpose programming language. Its design philosophy emphasizes code readability with the use of significant indentation. Python is dynamically typed and garbage-collected. It supports multiple programming paradigms, including structured, object-oriented and functional programming.
+          <br>
+          We use python to create algorithms in a convenient way :)
+        </p>
+        </div>
+
+
+        </div>
+
+
+    </div >
+
+    <!-- Books - contains 3 cols -->
+    <div id="books" class="books">
+
+        <!-- header -->
+        <h1 style="width: 40%; margin-left: 30%">COURSE CONTENTS</h1>
+
+        <!-- card of books -->
+        <div class="card_container">
+
+            <!-- card 1 - review ds book -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img
+                      style="width: 100%; height: 40%; border-radius: inherit"
+                      src="./assets/header1.png"
+                      alt="react"
+                    />
+                    <h1 style="margin: 40px">Review DS</h1>
+                    <p style="margin: 20px">Let's learn about basics of DS</p>
+                    <p style="margin-top: 80px">Created at 2023</p>
+                  </div>
+                  <div class="flip-card-back">
+                    <p style="margin: 20px">
+                      Here we will learn about basic data structures.
+                      <br>
+                      Having a basic understating of data structures helps us to improve our minds
+                      for more advanced topics.
+                      <br>
+                      If you are already familiar with basics of DS like Stack, etc. you can skip this part!
+                    </p>
+                    <button class="flip-card-btn" style="margin-top: 45%" onclick="window.location.href='lectures/review_ds.html'">
+                      CHECK OUT
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+    <!-- footer - contains 2 cols -->
+    <div>
+        <div class="footer">
+            <div class="part">
+              <hr />
+              <a>© 2022 Built by Pouya Mohammadi for fromDStoA Course in 
+                Tehran Polytechnic</a>
+            </div>
+          </div>
+    </div>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,489 @@
+/* Base of my html style config */
+:root{
+    --margin-out: 15px;
+    --margin-in: 2%;
+    --padding: 15px;
+    /* Using color palette hex of coursera */
+    --c1: #FFFFFF;
+    --c2: #0056D2;
+    --c3: #000000;
+    --c4: #eeeded;
+    /* Effect comp */
+    --c5: #c3c3c3;
+    --c6: #003f98;
+    --c7: #333333;
+    /* Transparent */
+    --ctp: rgba(255, 255, 255, 0.815);
+}
+
+/* base of all elements */
+*{
+    box-sizing: border-box;
+    /* width: auto; */
+    /* border: solid var(--c2) 5px;
+    padding: 5px; */
+}
+body {
+    background-color: var(--c1);
+    font-family: Helvetica; /* Times New Roman*/
+}
+
+
+/* header style */
+@keyframes main_text_ani {
+    from {
+       left: calc(-150%);
+    }
+    to {
+        left: 0px;
+    }
+}
+
+@keyframes sub_text_ani {
+    from {
+        left: calc(150%);
+    }
+    to {
+        left: 0px;
+    }
+}
+
+.header{
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    background-image: url('../assets/header1.png');
+    background-color: var(--c3);
+    padding: 50px;
+    text-align: center;
+    margin: var(--margin-out);
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-attachment: fixed;
+}
+
+.header .main_text {
+    color: var(--c1);
+    white-space: nowrap;
+    animation: main_text_ani;
+    animation-duration: 2s;
+    position: relative;
+    animation-delay: 0s;
+    font-size: 60px;
+}
+.header .sub_text {
+    color: var(--c1);
+    white-space: nowrap;
+    animation: sub_text_ani;
+    animation-duration: 2s;
+    position: relative;
+    animation-delay: 0s;
+    font-size: 30px;
+}
+
+/* hearer btn */
+.header button {
+    background-color: var(--c2);
+    border: 0px;
+    color: var(--c1);
+    padding: var(--padding);
+    margin: 30px;
+    animation: sub_text_ani;
+    animation-duration: 2s;
+    position: relative;
+    animation-delay: 0s;
+    border-radius: 10px;
+}
+.header button:hover {
+    transition: all 200ms;
+    background-color: var(--c1);
+    color: var(--c3);
+    border: 0px;
+}
+
+
+/* lectures style */
+.lectures{
+    padding: 5%;
+    margin: var(--margin-out);
+    display: flex;
+    flex-direction: row;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    background: linear-gradient(
+        to top right,
+        rgba(128, 0, 128, 0.478),
+        rgba(0, 0, 255, 0.466),
+        rgba(0, 128, 0, 0.547)
+      ), url('../assets/programming-langs.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+.lectures .cards {
+    float:left;
+    width: calc(20%);
+    padding: 20px;
+    text-align: center;
+    margin: var(--margin-in);
+    border-radius: 10px;
+    transition: all 500ms;
+    background-color: var(--ctp);
+    color: var(--c4);
+}
+.lectures .cards h1{
+    color: rgb(104, 105, 106);
+    text-align: center
+}
+.lectures .cards p {
+    color: rgb(104, 105, 106);
+    font-style: normal;
+    font-size: 18px;
+}
+.lectures .cards:hover {
+    transition: all 500ms;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    width: 30%;
+    transform: translateY(-15px);
+}
+
+
+
+
+
+/* books container style */
+.books {
+    background-color: #f3f1f1;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    padding: 10px;
+    margin: var(--margin-out);
+    display: flex;
+    flex-direction: column;
+}
+.books h1 {
+    background: linear-gradient(to right,var(--c2), var(--c3));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    transition: all 0.5s;
+    margin: 20px;
+    border-radius: 5px;
+    font-size: 40px;
+}
+.books h1:hover {
+    transition: all 0.5s;
+    font-size: 45px;
+    margin-bottom: 15px;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}  
+.books .card_container {
+    display: flex;
+    flex-direction: row;
+    margin-left: 12%;
+    margin-right: 12%;
+}
+  
+/* flip-card style */
+.flip-card {
+    background-color: transparent;
+    width: calc(30%);
+    height: 500px;
+    margin: 3%;
+    /* for 3d effect */
+    perspective: 800px;
+}
+.flip-card h1 {
+    font-size: 25px;
+}
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+}
+.flip-card:hover .flip-card-inner{
+    transition: all 500ms;
+    transform: rotateY(180deg);
+}
+.flip-card-front, .flip-card-back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-shadow: rgba(0, 0, 0, 0.56) 10px 20px 50px 5px;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+}  
+.flip-card-front {
+    background-color: var(--c1);
+    color: var(--c4);
+}
+.flip-card-front h1 {
+    font-size: 25px;
+}
+.flip-card-front p {
+    font-size: 15px;
+    font-weight: bold;
+    color: #000000;
+}
+.flip-card-back {
+    background-color: var(--c6);
+    color: var(--c1);
+    transform: rotateY(180deg);
+}
+.flip-card-back p{
+    text-align: left;
+    margin: var(--margin-in);
+    color: var(--c1);
+    font-size: 20px;
+}
+
+/* book popup btn */
+.flip-card-btn {
+    background-color: var(--c3);
+    border: 0px;
+    color: var(--c1);
+    width: 50%;
+    margin: 25%;
+    border-radius: 10px;
+    font-size: 15px;
+    padding: 10px;
+}
+.flip-card-btn:hover {
+    transition: all 200ms;
+    background-color: var(--c2);
+    color: var(--c4);
+} 
+
+
+
+
+
+/* popup styles */
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    backdrop-filter: blur(5px);
+    background-color: rgb(0, 0, 0, 0.6);
+    transition: opacity 0.5s;
+    visibility: hidden;
+    opacity: 0;
+}
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+    z-index: 999;
+}
+  
+.popup {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    margin-top: 50px;
+    border-radius: 0px;
+    background: var(--c1);
+    border-radius: 15px;
+    width: 70%;
+    height: 70%;
+    position: relative;
+    transition: all 5s ease-in-out;
+}
+.popup-text {
+    margin: 20px;
+}
+.popup h2 {
+    margin-top: 0;
+    color: var(--c3);
+}
+.popup h3 {
+    margin-top: 0;
+    color: var(--c3);
+    font-size: 14px;
+    font-weight: bold;
+}
+.popup .close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--c4);
+}
+.popup .close:hover {
+    color: var(--c2);
+}
+.popup .content {
+    max-width: 90%;
+    text-align: justify;
+    text-justify: inter-word;
+    max-height: 80%;
+    overflow: auto;
+    font-size: 14px;
+    margin-right: 40px;
+    color: var(--c3);
+}
+.popup h1{
+    background: linear-gradient(to right,rgb(0, 145, 255), rgb(0, 0, 111));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: left;
+    font-size: 30px;
+    margin-left: 0px;
+    margin-top: 5px ;
+    margin-bottom: 40px;
+}
+.popup h1:hover{
+    font-size: 30px;
+    margin-bottom: 40px;
+}
+.book-buttoni {
+    background-color:var(--c4);
+    border: 0px;
+    color: var(--c1);
+    width: 30%;
+    margin: 0px;
+    margin-top: 20px;
+    border-radius: 20px;
+    font-size: 15px;
+    padding: 10px;
+}
+.book-buttoni:hover {
+    transition: all 200ms;
+    background: var(--c2);
+    color: var(--c4);
+}
+
+
+
+
+
+
+
+/* footer style */
+.footer {
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    background-color: var(--c6);
+    padding: 40px;
+    margin: var(--margin-out);
+    display: flex;
+    flex-direction: row;
+} 
+.footer .part {
+    float: left;
+    display: block;
+    flex-direction: column;
+    width: calc(50% - 40px);
+    margin: 20px;
+    padding: 20px;
+    margin-bottom: 0px;
+    color: var(--c1);
+}
+.footer a{
+    margin: 10px;
+    text-decoration: none;
+    color: var(--c1);
+    font-size: 12px;
+}
+.footer a:hover {
+    color: var(--c2);
+}
+.footer .part hr {
+    opacity: 0.7;
+    width: 70%;
+    border-color: var(--c1);
+    background-color: var(--c2);
+    margin-left: 5px;
+}
+  
+
+
+
+/* menu btn style */
+.menu-icon{
+    top: 70px;
+    right: 90px;
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    padding: 5px;
+    border-radius: 100%;
+    background-color: var(--c2);
+    border: 3px solid var(--c1);
+}
+.menu-icon:hover{
+    background-color: var(--c6);
+    border: 3px solid var(--c7);
+    transition: all 200ms;
+}
+
+/* menu btn hr style */
+.menu-hr{
+    width: 70%;
+    border-color: var(--c1);
+    background-color: var(--c1);
+    border-radius: 5px;
+    height: 3px;
+}
+.menu-icon:hover > .menu-hr{
+    transition: all 200ms;
+    border-color: var(--c7);
+    background-color: #1a1d42;
+}
+.menu .close {
+    position: absolute;
+    background-color: var(--c2);
+    padding: 0px;
+    border: 3px solid var(--c1);
+    padding-left: 12px;
+    padding-right: 12px;
+    border-radius: 100%;
+    top: 73px;
+    right: 92px;
+    font-size: 45px;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--c1);
+}
+.menu .close:hover {
+    transition: all 200ms;
+    color: var(--c6);
+    background-color: var(--c1);
+    border: 3px solid var(--c6);
+}
+
+/* menu style */
+.menu{
+    padding-top: 100px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    position: fixed;
+    top:0;
+    background: linear-gradient(to left bottom, var(--c2),var(--c3));
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.menu:target{
+    visibility: visible;
+}
+.menu .items {
+    font-size: 40px; 
+    margin-top: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--c1);
+}
+.menu .items:hover {
+color: var(--c5);
+}
